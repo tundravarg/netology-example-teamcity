@@ -35,6 +35,10 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    artifactRules = """
+        +:target/*.jar
+        -:target/original-*.jar
+    """.trimIndent()
     publishArtifacts = PublishMode.SUCCESSFUL
 
     params {
